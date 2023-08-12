@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="user" class="entities.User"></bean>
+	<bean id="panier" class="entities.Panier"></bean>
+	<bean id="commandearticle" class="entities.CommandeArticle"></bean>
+	<bean id="commande" class="entities.Commande"></bean>
+	<bean id="article" class="entities.Article"></bean>
+
+	<bean id="articleDao" class="dao.ArticleDaoImpl"></bean>
+	<bean id="commandeArticleDao" class="dao.CommandeArticle"></bean>
+	<bean id="commandeDao" class="dao.CommandeDaoImpl"></bean>
+	<bean id="panierDao" class="dao.PanierDaoImpl"></bean>
+	<bean id="userDao" class="dao.UserDaoImpl"></bean>
+
+	<bean id="generatePdf" class="generatePDF.GeneratePDF"></bean>
+
+	<bean id="commandeMetier" class="metier.CommandeMetier"></bean>
+	<bean id="panierMetier" class="metier.PanierMetier"></bean>
+	<bean id="userMetier" class="metier.UserMetier"></bean>
+
+</beans>

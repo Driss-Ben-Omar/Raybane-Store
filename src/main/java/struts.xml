@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources"
+		value="ApplicationResources" />
+
+
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="pagelogin" method="login" class="bean.LoginUser">
+			<result name="success">frontend/login.jsp</result>
+			<result name="error">frontend/index.jsp</result>
+		</action>
+		<action name="profil" method="profil" class="bean.LoginUser">
+			<result name="success">frontend/profil.jsp</result>
+			<result name="error">frontend/login.jsp</result>
+		</action>
+		<action name="login" method="execute" class="bean.LoginUser">
+			<result name="success">frontend/index.jsp</result>
+			<result name="error">frontend/login.jsp</result>
+		</action>
+		<action name="logout" method="deconnect" class="bean.LoginUser">
+			<result name="true">frontend/login.jsp</result>
+			<result name="false">frontend/login.jsp</result>
+		</action>
+		<action name="setting" method="updateInformation"
+			class="bean.LoginUser">
+			<result name="update">frontend/index.jsp</result>
+			<result name="confirm">frontend/Setting.jsp</result>
+			<result name="old">frontend/Setting.jsp</result>
+			<result name="no">frontend/login.jsp</result>
+		</action>
+		<action name="pageregister">
+			<result>frontend/register.jsp</result>
+		</action>
+		<action name="pagelogin">
+			<result>frontend/login.jsp</result>
+		</action>
+		<action name="pagesetting" method="setting"
+			class="bean.LoginUser">
+			<result name="success">frontend/Setting.jsp</result>
+			<result name="error">frontend/login.jsp</result>
+		</action>
+		<action name="register" method="register"
+			class="bean.LoginUser">
+			<result name="error">frontend/register.jsp</result>
+			<result name="create">frontend/login.jsp</result>
+		</action>
+		<action name="index" method="index" class="bean.LoginUser">
+			<result name="success">frontend/index.jsp</result>
+			<result name="error">frontend/login.jsp</result>
+		</action>
+		<action name="add" method="shopingcard"
+			class="bean.PanierAction">
+			<result name="success">frontend/shop.jsp</result>
+			<result name="error">frontend/login.jsp</result>
+		</action>
+		<action name="remove" method="remove" class="bean.PanierAction">
+			<result name="success">frontend/cart.jsp</result>
+			<result name="error">frontend/login.jsp</result>
+		</action>
+		<action name="commander" method="commander"
+			class="bean.PanierAction">
+			<result name="success">frontend/index.jsp</result>
+			<result name="error">frontend/login.jsp</result>
+		</action>
+		<action name="commande" method="mescommande"
+			class="bean.LoginUser">
+			<result name="success">frontend/commande.jsp</result>
+			<result name="error">frontend/login.jsp</result>
+		</action>
+		<action name="invoice" method="generate"
+			class="bean.PanierAction">
+			<result name="success">frontend/commande.jsp</result>
+			<result name="error">frontend/login.jsp</result>
+			<result name="login">frontend/login.jsp</result>
+		</action>
+		<action name="update" method="UpdateQuantite"
+			class="bean.PanierAction">
+			<result name="error">frontend/cart.jsp</result>
+			<result name="login">frontend/login.jsp</result>
+		</action>
+		<action name="cart" method="card" class="bean.PanierAction">
+			<result name="success">frontend/cart.jsp</result>
+			<result name="error">frontend/login.jsp</result>
+		</action>
+		<action name="shop" method="shop" class="bean.LoginUser">
+			<result name="success">frontend/shop.jsp</result>
+			<result name="error">frontend/login.jsp</result>
+		</action>
+		<action name="mescommande" method="commande"
+			class="bean.LoginUser">
+			<result name="success">frontend/commande.jsp</result>
+			<result name="error">frontend/login.jsp</result>
+		</action>
+
+	</package>
+
+</struts>
